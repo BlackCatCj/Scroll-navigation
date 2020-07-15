@@ -1,32 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>滚动渐变导航栏</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <header>
-      <a href="#" class="logo">Logo</a>
-      <ul>
-        <li><a href="#">占位符</a></li>
-        <li><a href="#">占位符</a></li>
-        <li><a href="#">占位符</a></li>
-        <li><a href="#">占位符</a></li>
-        <li><a href="#">占位符</a></li>
-        <li><a href="#">占位符</a></li>
-      </ul>
-    </header>
 
-    <section class="banner"></section>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>滚动渐变导航栏</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
 
-    <script>
-      window.addEventListener("scroll", function () {
-        var header = document.querySelector("header");
-        // 当y轴大于0即滚动鼠标滚轮后，添加样式sticky给header
-        header.classList.toggle("sticky", window.scrollY > 0);
-      });
-    </script>
-  </body>
+<body>
+  <header>
+    <a href="#" class="logo">Logo</a>
+    <ul>
+      <li><a href="#">占位符</a></li>
+      <li><a href="#">占位符</a></li>
+      <li><a href="#">占位符</a></li>
+      <li><a href="#">占位符</a></li>
+      <li><a href="#">占位符</a></li>
+      <li><a href="#">占位符</a></li>
+    </ul>
+  </header>
+
+  <section class="banner"></section>
+
+  <script>
+    window.addEventListener("scroll", function () {
+      var header = document.querySelector("header");
+      // 当y轴大于0即滚动鼠标滚轮后，添加样式sticky给header
+      header.classList.toggle("sticky", window.scrollY > 0);
+    });
+  </script>
+</body>
+
 </html>

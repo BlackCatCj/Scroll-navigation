@@ -6,6 +6,7 @@
 body {
   background: #000;
   min-height: 200vh;
+  width: 100%;
 }
 header {
   position: fixed;
@@ -31,7 +32,6 @@ header .logo {
   text-transform: uppercase;
   letter-spacing: 2px;
   transition: 0.6s;
-  /* border: 1px solid red; */
 }
 
 header ul {
@@ -49,24 +49,63 @@ header ul li a {
   margin: 0 15px;
   text-decoration: none;
   color: #fff;
-  letter-spacing: 2px;
-  font-weight: 500px;
+  /* letter-spacing: 2px; */
   transition: 0.6s;
+  font-size: 20px;
 }
 .banner {
   position: relative;
   width: 100%;
+  /* 必须是100vh，如果是100%,则高度为0，因为section本身没设置高度 */
   height: 100vh;
-  background: url(bg.png);
+  background: url(bg.png) center center no-repeat;
+
+  /* !把 background-attachment 属性设置为 "fixed"，才能保证该属性在 Firefox 和 Opera 中正常工作 */
+  /* 固定图片，不随滚动条滚滚动 */
+  background-attachment:fixed;
   background-size: cover;
 }
+
 /* 导航栏渐变样式 */
 /* header.sticky之间不要有空格，否则识别不了 */
 header.sticky {
+  /* 通过修改内边距，造成文字移动的效果 */
+  /* 因为内边距一下子缩小，所以文字就会往中间挤压移动 */
   padding: 5px 100px;
   background: #fff;
 }
 header.sticky .logo,
 header.sticky ul li a {
   color: #000;
+}
+/* !响应式，适应手机，修改字体大小、边距 */
+/* !大的要放在小的前面，不然也会覆盖响应的效果  max-width:780   max-width:500*/
+@media(max-width:780px){
+  header {
+    padding: 20px 20px;
+  }
+  header ul li a{
+    letter-spacing: 0;
+    margin: 0 6px;
+    font-size: 10px;
+  }
+  header.sticky {
+  padding: 5px 10px;
+
+  }
+}
+
+@media(max-width:500px){
+  header {
+    padding: 20px 5px;
+  }
+  header ul li a{
+    letter-spacing: 0;
+    margin: 0 2px;
+    font-size: 10px;
+  }
+  header.sticky {
+  padding: 5px 10px;
+
+  }
 }
